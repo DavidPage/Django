@@ -5,10 +5,10 @@
 </head>
 <body>
 <h1>Competition</h1>
-<a href="{% url 'competition:index' %}">Competitions</a><br />
-<a href="{% url 'team:index' %}">Teams</a><br />
-<a href="{% url 'trade:index' %}">Trades</a><br />
-<a href="{% url 'market:index' %}">Markets</a><br />
+<a href="{% url 'competition:index' %}">Competitions</a>
+<a href="{% url 'team:index' %}">Teams</a>
+<a href="{% url 'trade:index' %}">Trades</a>
+<a href="{% url 'market:index' %}">Markets</a>
   <h1>Competition:</h1>
     <a href="{% url 'competition:new' %}">New competition</a>
     {% for competition in allCompetitions %}
