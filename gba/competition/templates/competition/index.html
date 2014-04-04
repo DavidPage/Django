@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Competition</title>
+</head>
+<body>
+<h1>Competition</h1>
+<a href="{% url 'competition:index' %}">Competitions</a><br />
+<a href="{% url 'team:index' %}">Teams</a><br />
+<a href="{% url 'trade:index' %}">Trades</a><br />
+<a href="{% url 'market:index' %}">Markets</a><br />
+  <h1>Competition:</h1>
+    <a href="{% url 'competition:new' %}">New competition</a>
+    {% for competition in allCompetitions %}
+       <div>nome: {{ competition.competition_name }}</div>
+    {% endfor %}
+</body>
+</html>

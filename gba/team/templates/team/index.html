@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% load url from future %}
+<html>
+<head>
+    <title>Index</title>
+</head>
+<body>
+<h2>Menu:</h2>
+<a href="{% url 'competition:index' %}">Competitions</a><br>
+<a href="{% url 'market:index' %}">Markets</a><br>
+<a href="{% url 'team:index' %}">Teams</a><br>
+<a href="{% url 'trade:index' %}">Trades</a><br>
+
+<h1>Teams</h1>
+<a href="{% url 'team:new' %}"> Create new team</a><br>
+<h4>Teams until date:</h4>
+<table>
+{% for team in allTeams %}
+    <tr>
+        <td> {{ team.team_name }}</td>
+        <td> - </td>
+        <td> Delete this team? </td>
+    </tr>
+{% endfor %}
+</table>
+</body>
+</html>

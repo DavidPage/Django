@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+{% load url from future %}
+<html>
+<head>
+    <title>Index</title>
+</head>
+<body>
+<h2>Menu:</h2>
+<a href="{% url 'competition:index' %}">Competitions</a><br>
+<a href="{% url 'market:index' %}">Markets</a><br>
+<a href="{% url 'team:index' %}">Teams</a><br>
+<a href="{% url 'trade:index' %}">Trades</a><br>
+
+<h1>Trades</h1>
+<a href="{% url 'trade:new' %}"> Create new trade</a><br>
+</body>
+</html>

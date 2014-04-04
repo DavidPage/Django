@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+
+<h2>Menu:</h2>
+<a href="{% url 'competition:index' %}">Competitions</a><br>
+<a href="{% url 'market:index' %}">Markets</a><br>
+<a href="{% url 'team:index' %}">Teams</a><br>
+<a href="{% url 'trade:index' %}">Trades</a><br>
+
+<h1>Insert new trade</h1>
+<form method="post" action="{% url 'trade:insert' %}">
+    {% csrf_token %}
+    <h4>Select match (in construction):</h4>
+    <select>
+        <option>1</option>
+    </select>
+    <h4>Select market:</h4>
+    <select>
+        {% for market in allMarkets %}
+        <option> {{ market.market_name }} </option>
+        {% endfor %}
+    </select>
+    <h4>Insert stake value:</h4>
+    <input name="stakeValue"> €
+    <h4>Insert profit/loss:</h4>
+    <input name="profitLossValue"> €
+    <input type="submit" value="Add new trade!"></input>
+</form>
+
+</body>
+</html>
