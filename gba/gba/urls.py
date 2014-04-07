@@ -17,6 +17,6 @@ urlpatterns = patterns('',
     url(r'^Trade/', include('trade.urls', namespace="trade")),
     url(r'^Market/', include('market.urls', namespace="market")),
     url(r'^Competition/', include('competition.urls', namespace="competition")),
-    #url(r'^Match/', include('match.urls', namespace="match")),
+    url(r'^Match/', include('match.urls', namespace="match")),
     url(r'^admin/', include(admin.site.urls)),
 )

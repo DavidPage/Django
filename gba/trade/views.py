@@ -15,7 +15,7 @@ def index(request):
 def new(request):
     allMarkets = Market.objects.all()
     context = RequestContext(request, {'allMarkets': allMarkets })
-    return render(request, 'match/new.html', context)
+    return render(request, 'trade/new.html', context)
 
 @csrf_protect
 def insert(request):
@@ -28,4 +28,4 @@ def insert(request):
     trade.profitLoss = request.POST['profitLoss']
     trade.date = datetime.datetime.now()
     trade.save()
-    return render(request, 'match/index.html', )
+    return render(request, 'trade/index.html', )
