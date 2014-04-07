@@ -1,15 +1,9 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title></title>
-</head>
-<body>
+{% extends "gba_menu.html" %}
 
-<h2>Menu:</h2>
-<a href="{% url 'competition:index' %}">Competitions</a><br>
-<a href="{% url 'market:index' %}">Markets</a><br>
-<a href="{% url 'team:index' %}">Teams</a><br>
-<a href="{% url 'trade:index' %}">Trades</a><br>
+{% block screenMenu %}
+<h1>Trades</h1>
+{% endblock %}
+{% block content %}
 
 <h1>Insert new trade</h1>
 <form method="post" action="{% url 'trade:insert' %}">
@@ -30,6 +24,4 @@
     <input name="profitLossValue"> €
     <input type="submit" value="Add new trade!"></input>
 </form>
-
-</body>
-</html>
+{% endblock %}

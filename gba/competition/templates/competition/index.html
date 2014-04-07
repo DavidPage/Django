@@ -1,18 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Competition</title>
-</head>
-<body>
-<h1>Competition</h1>
-<a href="{% url 'competition:index' %}">Competitions</a>
-<a href="{% url 'team:index' %}">Teams</a>
-<a href="{% url 'trade:index' %}">Trades</a>
-<a href="{% url 'market:index' %}">Markets</a>
-  <h1>Competition:</h1>
+{% extends "gba_menu.html" %}
+
+{% block screenMenu %}
+<h1>Competition:</h1>
+{% endblock %}
+{% block content %}
     <a href="{% url 'competition:new' %}">New competition</a>
     {% for competition in allCompetitions %}
        <div>nome: {{ competition.competition_name }}</div>
     {% endfor %}
-</body>
-</html>
+{% endblock %}

@@ -1,17 +1,9 @@
-<!DOCTYPE html>
-{% load url from future %}
-<html>
-<head>
-    <title>Index</title>
-</head>
-<body>
-<h2>Menu:</h2>
-<a href="{% url 'competition:index' %}">Competitions</a><br>
-<a href="{% url 'market:index' %}">Markets</a><br>
-<a href="{% url 'team:index' %}">Teams</a><br>
-<a href="{% url 'trade:index' %}">Trades</a><br>
+{% extends "gba_menu.html" %}
 
-<h1>Markets</h1>
+{% block screenMenu %}
+<h1>Market:</h1>
+{% endblock %}
+{% block content %}
 <a href="{% url 'market:new' %}"> Create new market</a><br>
 <h4>All markets untill date</h4>
 <table>
@@ -21,6 +13,4 @@
         <td> Delete this market? </td>
     </tr>
 {% endfor %}
-</table>
-</body>
-</html>
+{% endblock %}
