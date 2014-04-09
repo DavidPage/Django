@@ -3,7 +3,7 @@
 <h1>Match:</h1>
 {% endblock %}
 {% block content %}
-<a href="{% url 'match:new' %}"> Create new match</a><br>
+<a href="{% url 'match:index' %}"> Create new match</a><br>
 <h4> Matches until date:</h4>
 <table>
 {% for team in allTeams %}
