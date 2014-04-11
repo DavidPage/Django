@@ -1,4 +1,3 @@
-from django.db.models.fields import CharField
 from django.db import models
 from team.models import Team
 from competition.models import Competition

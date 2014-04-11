@@ -9,8 +9,12 @@
 <form method="post" action="{% url 'match:index' %}">
     {% csrf_token %}
 
-    <h4>Select home team:</h4>
-    <h2> {{ competition.competition_name }} </h2>
+    <h4>Select Competition:</h4>
+     <select>
+        {% for competition in allCompetitions %}
+        <option> {{ competition.competition_name }} </option>
+        {% endfor %}
+    </select>
 
     <h4>Select home team:</h4>
      <select>

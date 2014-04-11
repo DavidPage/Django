@@ -5,10 +5,22 @@
 {% block content %}
 <a href="{% url 'match:new' %}"> Create new match</a><br>
 <h4> Matches until date:</h4>
-<table>
-{% for match in allMatches %}
-    <tr>
-        <td> Delete this match? </td>
+<table style="border:1px solid black;">
+    <tr >
+        <td style="border:1px solid black;">Competition</td>
+        <td style="border:1px solid black;">Home Team</td>
+        <td></td>
+        <td style="border:1px solid black;">Away Team</td>
+        <td style="border:1px solid black;">Date</td>
     </tr>
-{% endfor %}
+    {% for match in allMatches %}
+    <tr>
+        <td style="border:1px solid black;">{{ match.competition.competition_name }}</td>
+        <td style="border:1px solid black;">{{ match.homeTeam }}</td>
+        <td style="border:1px solid black;"> vs </td>
+        <td style="border:1px solid black;">{{ match.awayTeam}}</td>
+        <td style="border:1px solid black;">(Em construição)</td>
+        <td style="border:1px solid black;">X</td>
+    </tr>
+    {% endfor %}
 {% endblock %}

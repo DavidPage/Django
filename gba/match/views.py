@@ -2,6 +2,8 @@ from django.shortcuts import render
 from match.models import Match
 from team.models import Team
 from django.template.context import RequestContext
+from competition.models import Competition
+
 
 def index(request):
      matches = Match.objects.all()
@@ -10,5 +12,6 @@ def index(request):
 
 def new(request):
     teams = Team.objects.all()
-    context = RequestContext(request, {'allTeams': teams})
+    competitions = Competition.objects.all()
+    context = RequestContext(request, {'allTeams': teams, 'allCompetitions': competitions,})
     return render(request, 'match/new.html',context )
