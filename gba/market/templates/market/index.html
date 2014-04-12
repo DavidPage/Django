@@ -10,7 +10,7 @@
 {% for market in allMarkets %}
     <tr>
         <td> {{ market.market_name }} </td>
-        <td> Delete this market? </td>
+        <td ><a href="{% url 'market:index' %}"><span class="glyphicon glyphicon-remove" style="cursor: pointer;"></span></a></td>
     </tr>
 {% endfor %}
 {% endblock %}

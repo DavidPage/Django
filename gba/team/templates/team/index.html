@@ -8,12 +8,15 @@
 <a href="{% url 'team:new' %}"> Create new team</a><br>
 <h4>Teams until date:</h4>
 <table>
+    <tr>
+        <td></td>
+        <td></td>
+    </tr>
 {% for team in allTeams %}
     <tr>
         <td> {{ team.team_name }}</td>
-        <td> - </td>
-        <td> Delete this team? </td>
+        <td ><a href="{% url 'team:index' %}"><span class="glyphicon glyphicon-remove" style="cursor: pointer;"></span></a></td>
     </tr>
 {% endfor %}
 </table>
-        {% endblock %}
+{% endblock %}

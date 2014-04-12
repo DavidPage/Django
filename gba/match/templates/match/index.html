@@ -5,22 +5,29 @@
 {% block content %}
 <a href="{% url 'match:new' %}"> Create new match</a><br>
 <h4> Matches until date:</h4>
-<table style="border:1px solid black;">
-    <tr >
-        <td style="border:1px solid black;">Competition</td>
-        <td style="border:1px solid black;">Home Team</td>
-        <td></td>
-        <td style="border:1px solid black;">Away Team</td>
-        <td style="border:1px solid black;">Date</td>
-    </tr>
-    {% for match in allMatches %}
-    <tr>
-        <td style="border:1px solid black;">{{ match.competition.competition_name }}</td>
-        <td style="border:1px solid black;">{{ match.homeTeam }}</td>
-        <td style="border:1px solid black;"> vs </td>
-        <td style="border:1px solid black;">{{ match.awayTeam}}</td>
-        <td style="border:1px solid black;">(Em construição)</td>
-        <td style="border:1px solid black;">X</td>
-    </tr>
-    {% endfor %}
+<div class="container-fluid col-md-8 ">
+    <table class="table col-md-offset-1">
+        <tr>
+            <td>Competition</td>
+            <td>Home Team</td>
+            <td></td>
+            <td>Away Team</td>
+            <td>Date</td>
+            <td></td>
+        </tr>
+        {% for match in allMatches %}
+        <form action="{% url 'match:delete' %}" method="post" id="teste">
+            {% csrf_token %}
+            <input type="hidden" value="{{ match.id }}" id="match" name="match">
+            <tr>
+                <td>{{ match.competition.competition_name }}</td>
+                <td>{{ match.homeTeam }}</td>
+                <td> vs</td>
+                <td>{{ match.awayTeam}}</td>
+                <td>(Em construição)</td>
+                <td><span class="glyphicon glyphicon-remove" style="cursor: pointer;" onclick="document.getElementById('match').value = {{ match.id }};document.getElementById('teste').submit();"></span></td>
+            </tr>
+        </form>
+</div>
+{% endfor %}
 {% endblock %}

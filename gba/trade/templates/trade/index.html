@@ -6,5 +6,9 @@
 {% block content %}
 
 <a href="{% url 'trade:new' %}"> Create new trade</a><br>
-
+<table>
+    <tr>
+        <td ><a href="{% url 'market:index' %}"><span class="glyphicon glyphicon-remove" style="cursor: pointer;"></span></a></td>
+    </tr>
+</table>
 {% endblock %}
