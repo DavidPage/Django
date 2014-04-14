@@ -6,6 +6,7 @@ from competition.models import Competition
 from market.models import Market
 from team.models import Team
 from trade.models import Trade
+from match.models import Match
 
 def index(request):
     allTrades = Trade.objects.all()
@@ -14,7 +15,8 @@ def index(request):
 
 def new(request):
     allMarkets = Market.objects.all()
-    context = RequestContext(request, {'allMarkets': allMarkets })
+    allMatches = Match.objects.all()
+    context = RequestContext(request, {'allMarkets': allMarkets, 'allMatches': allMatches })
     return render(request, 'trade/new.html', context)
 
 @csrf_protect

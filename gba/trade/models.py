@@ -1,16 +1,15 @@
-#from django.contrib.localflavor.generic.forms import DateTimeField
-from django.db.models.fields import CharField
 from django.db import models
-from competition.models import Competition
 from market.models import Market
+from match.models import Match
 
 
 class Trade(models.Model):
     #competition = models.ForeignKey(Competition, related_name="competition")
+    match = models.ForeignKey(Match, related_name="match")
     market = models.ForeignKey(Market, related_name="market")
 
-    invested = CharField(max_length=20)
-    profitLoss = CharField(max_length=20)
+    invested = models.DecimalField(max_digits=5, decimal_places=2)
+    profitLoss = models.DecimalField(max_digits=5, decimal_places=2)
     #dateTrade = models.DateTimeField()
 
     def __str__(self):

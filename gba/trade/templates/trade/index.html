@@ -6,9 +6,23 @@
 {% block content %}
 
 <a href="{% url 'trade:new' %}"> Create new trade</a><br>
-<table>
+<table class="table">
     <tr>
-        <td ><a href="{% url 'market:index' %}"><span class="glyphicon glyphicon-remove" style="cursor: pointer;"></span></a></td>
+        <td>Match</td>
+        <td>Invested</td>
+        <td>Profit & Loss</td>
+        <td>ROI</td>
+        <td></td>
     </tr>
+
+    {% for trade in allTrades %}
+    <tr>
+        <td>Match</td>
+        <td>Invested</td>
+        <td>Profit & Loss</td>
+        <td>ROI</td>
+        <td ><a href="{% url 'trade:index' %}"><span class="glyphicon glyphicon-remove" style="cursor: pointer;"></span></a></td>
+    </tr>
+    {% endfor %}
 </table>
 {% endblock %}
