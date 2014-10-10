@@ -1,0 +1,22 @@
+{% extends "gba_menu.html" %}
+
+{% block screenMenu %}
+<h1>Competition:</h1>
+{% endblock %}
+{% block content %}
+<a href="{% url 'competition:new' %}">New competition</a>
+<table>
+    <tr>
+        <td>Name</td>
+        <td></td>
+    </tr>
+    {% for competition in allCompetitions %}
+    <tr>
+        <td>{{ competition.competition_name }}</td>
+        <td><a href="{% url 'market:index' %}"><span class="glyphicon glyphicon-remove" style="cursor: pointer;"></span></a>
+        </td>
+    </tr>
+    {% endfor %}
+
+</table>
+{% endblock %}

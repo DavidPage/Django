@@ -1,0 +1,16 @@
+{% extends "gba_menu.html" %}
+
+{% block screenMenu %}
+<h1>Market:</h1>
+{% endblock %}
+{% block content %}
+<a href="{% url 'market:new' %}"> Create new market</a><br>
+<h4>All markets untill date</h4>
+<table>
+{% for market in allMarkets %}
+    <tr>
+        <td> {{ market.market_name }} </td>
+        <td ><a href="{% url 'market:index' %}"><span class="glyphicon glyphicon-remove" style="cursor: pointer;"></span></a></td>
+    </tr>
+{% endfor %}
+{% endblock %}

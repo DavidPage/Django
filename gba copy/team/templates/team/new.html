@@ -1,0 +1,13 @@
+{% extends "gba_menu.html" %}
+
+{% block screenMenu %}
+<h1>Insert new Team</h1>
+{% endblock %}
+{% block content %}
+
+<form method="post" action="{% url 'team:insert' %}">
+    {% csrf_token %}
+    <input name="teamName">
+    <input type="submit" value="Add new Team!"></input>
+</form>
+{% endblock %}

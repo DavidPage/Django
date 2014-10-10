@@ -1,0 +1,22 @@
+{% extends "gba_menu.html" %}
+
+{% block screenMenu %}
+<h1>Teams</h1>
+{% endblock %}
+{% block content %}
+
+<a href="{% url 'team:new' %}"> Create new team</a><br>
+<h4>Teams until date:</h4>
+<table>
+    <tr>
+        <td></td>
+        <td></td>
+    </tr>
+{% for team in allTeams %}
+    <tr>
+        <td> {{ team.team_name }}</td>
+        <td ><a href="{% url 'team:index' %}"><span class="glyphicon glyphicon-remove" style="cursor: pointer;"></span></a></td>
+    </tr>
+{% endfor %}
+</table>
+{% endblock %}

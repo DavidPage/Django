@@ -1,0 +1,13 @@
+{% extends "gba_menu.html" %}
+
+{% block screenMenu %}
+<h1>Competition:</h1>
+{% endblock %}
+{% block content %}
+<h1>Insert new Competition</h1>
+<form method="post" action="{% url 'competition:insert' %}">
+    {% csrf_token %}
+    <input name="competitionName">
+    <input type="submit" value="Add new competition!"></input>
+</form>
+{% endblock %}
