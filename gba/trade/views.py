@@ -21,12 +21,11 @@ def insert(request):
     if request.method == "POST":
         form = TradeForm(request.POST)
         if form.is_valid():
-            post = form.save(commit= True)
+            post = form.save(commit=True)
             post.save()
-            return render(request, 'trade/index.html', )
-        else:
-            return render(request, 'trade/new.html', {'form': form})
-    else:
-        form = TradeForm()
-        return render(request, 'trade/new.html', {'form': form})
+            return index(request)
+            #return render(request, 'trade/index.html', )
+    #else:
+    #    form = TradeForm()
+    #    return render(request, 'trade/new.html', {'form': form})
 
