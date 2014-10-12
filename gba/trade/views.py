@@ -24,8 +24,14 @@ def insert(request):
             post = form.save(commit=True)
             post.save()
             return index(request)
-            #return render(request, 'trade/index.html', )
+
     #else:
     #    form = TradeForm()
     #    return render(request, 'trade/new.html', {'form': form})
+
+def delete(request, id):
+    trade = Trade.objects.get(pk=id)
+    trade.delete()
+    #return render(request, 'trade/index.html', )
+    return index(request)
 

@@ -12,7 +12,7 @@
         <td>Invested</td>
         <td>Profit & Loss</td>
         <td>ROI</td>
-        <td></td>
+        <td>Delete all</td>
     </tr>
 
     {% for trade in allTrades %}
@@ -22,7 +22,8 @@
         <td>{{trade.invested}}€</td>
         <td>{{trade.profitLoss}}€</td>
         <td>{{ trade.divide }}%</td>
-        <td><a href="{% url 'trade:index' %}"><span class="glyphicon glyphicon-remove" style="cursor: pointer;"></span></a>
+        <td><a href="{% url 'trade:delete' trade.id %}">
+            <span class="glyphicon glyphicon-remove" style="cursor: pointer;"></span></a>
         </td>
     </tr>
     {% endfor %}
