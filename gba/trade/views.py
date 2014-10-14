@@ -3,6 +3,7 @@ from django.shortcuts import render
 from django.template.context import RequestContext
 from trade.models import Trade
 from trade.forms import TradeForm
+from django.http import HttpResponseRedirect
 
 
 def index(request):
@@ -23,15 +24,10 @@ def insert(request):
         if form.is_valid():
             post = form.save(commit=True)
             post.save()
-            return index(request)
+            return HttpResponseRedirect('/Trade/')
 
-    #else:
-    #    form = TradeForm()
-    #    return render(request, 'trade/new.html', {'form': form})
-
-def delete(request, id):
+def delete(request,id):
     trade = Trade.objects.get(pk=id)
     trade.delete()
-    #return render(request, 'trade/index.html', )
     return index(request)
 

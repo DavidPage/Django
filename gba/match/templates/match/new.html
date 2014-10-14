@@ -6,33 +6,9 @@
 {% block content %}
 
 <h1>Insert new Match</h1>
-<form method="post" action="{% url 'match:insert' %}">
+<form method="POST" class="post-form" action="{% url 'match:insert' %}">
     {% csrf_token %}
-
-    <h4>Select Competition:</h4>
-     <select name="competition">
-        {% for competition in allCompetitions %}
-        <option value="{{ competition.id }}"> {{ competition.competition_name }} </option>
-        {% endfor %}
-    </select>
-
-    <h4>Select home team:</h4>
-     <select name="homeTeam">
-        {% for team in allTeams %}
-        <option value="{{ team.id }}"> {{ team.team_name }} </option>
-        {% endfor %}
-    </select>
-
-    <h4>Select away team:</h4>
-    <select name="awayTeam">
-        {% for team in allTeams %}
-        <option value="{{ team.id }}"> {{ team.team_name }} </option>
-        {% endfor %}
-    </select>
-
-    <h4>Insert match date (format: dd-mm-YYYY):</h4>
-    <input type="text">
-
-    <input type="submit" value="Add new match!">
+    {{ form.as_p }}
+    <button type="submit" class="save btn btn-default">Add new match!</button>
 </form>
 {% endblock %}

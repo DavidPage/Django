@@ -1,4 +1,5 @@
 from django import forms
+
 from trade.models import Trade
 
 class TradeForm(forms.ModelForm):

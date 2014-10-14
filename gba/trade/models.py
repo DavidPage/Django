@@ -7,7 +7,6 @@ class Trade(models.Model):
     market = models.ForeignKey(Market, related_name="market")
     invested = models.DecimalField(max_digits=5, decimal_places=2)
     profitLoss = models.DecimalField(max_digits=5, decimal_places=2)
-    #dateTrade = models.DateTimeField()
 
     def __str__(self):
         return self.invested

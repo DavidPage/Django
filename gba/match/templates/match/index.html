@@ -23,9 +23,11 @@
                 <td>{{ match.competition.competition_name }}</td>
                 <td>{{ match.homeTeam }}</td>
                 <td> vs</td>
-                <td>{{ match.awayTeam}}</td>
-                <td>(Em construição)</td>
-                <td><span class="glyphicon glyphicon-remove" style="cursor: pointer;" onclick="document.getElementById('match').value = {{ match.id }};document.getElementById('teste').submit();"></span></td>
+                <td>{{ match.awayTeam }}</td>
+                <td>{{ match.matchTime }}</td>
+                <td><span class="glyphicon glyphicon-remove" style="cursor: pointer;"
+                          onclick="document.getElementById('match').value = {{ match.id }};document.getElementById('teste').submit();"></span>
+                </td>
             </tr>
         </form>
 </div>

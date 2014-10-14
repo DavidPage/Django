@@ -16,9 +16,6 @@ def new(request):
     return render(request, 'competition/new.html', )
 
 def insert(request):
-    competition = Competition(competition_name = request.POST.get('competitionName'))
-
-    #competition.competition_name = request.POST.get('competitionName')
+    competition = Competition(competition_name=request.POST.get('competitionName'))
     competition.save()
-    #return render('teste')
     return HttpResponseRedirect('/Competition/')
